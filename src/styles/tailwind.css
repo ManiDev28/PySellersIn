@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Global Colors */
+    --global-bg-1: #aed8f3;
+    --global-bg-2: #bae4ff;
+    --global-bg-3: #d5f2ff;
+    --global-bg-4: #e8ecf0;
+    --global-bg-5: #ffffff;
+    --global-bg-6: #111827;
+    --global-text-1: #000000;
+    --global-text-2: #ffffff;
+
+    /* Header Colors */
+    --header-bg-1: #f5f5f5;
+    --header-text-1: #0a1696;
+
+    /* Button Colors */
+    --button-bg-1: #111827;
+    --button-text-1: #ffffff;
+
+    /* Footer Colors */
+    --footer-bg-1: #3e3e3e;
+  }
+}
+
+@layer utilities {
+  /* Global */
+  .bg-global-1 {
+    background-color: var(--global-bg-1);
+  }
+  .bg-global-2 {
+    background-color: var(--global-bg-2);
+  }
+  .bg-global-3 {
+    background-color: var(--global-bg-3);
+  }
+  .bg-global-4 {
+    background-color: var(--global-bg-4);
+  }
+  .bg-global-5 {
+    background-color: var(--global-bg-5);
+  }
+  .bg-global-6 {
+    background-color: var(--global-bg-6);
+  }
+  .text-global-1 {
+    color: var(--global-text-1);
+  }
+  .text-global-2 {
+    color: var(--global-text-2);
+  }
+
+  /* Header */
+  .bg-header-1 {
+    background-color: var(--header-bg-1);
+  }
+  .text-header-1 {
+    color: var(--header-text-1);
+  }
+
+  /* Button */
+  .bg-button-1 {
+    background-color: var(--button-bg-1);
+  }
+  .text-button-1 {
+    color: var(--button-text-1);
+  }
+
+  /* Footer */
+  .bg-footer-1 {
+    background-color: var(--footer-bg-1);
+  }
+}
