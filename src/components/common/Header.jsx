@@ -5,7 +5,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const menuItems = [
-    { label: 'Home', href: '#home' },
+    { label: 'Home', href: '/' },
     { label: 'About us', href:'/about-us'},
     { label: 'Our services', href:'/services' },
     { label: 'Our Products', href: '#products' },
@@ -18,11 +18,13 @@ const Header = () => {
       <div className="flex justify-between items-center w-full">
         {/* Logo Section */}
         <div className="flex items-center gap-1 sm:gap-2 ml-2 sm:ml-4 lg:ml-[16px] mt-1 sm:mt-2 lg:mt-[6px]">
+          <a href="/">
           <img 
             src="/images/common/pylogo.png" 
             alt="Pysellers Logo" 
             className="w-[40px] h-[48px] sm:w-[48px] sm:h-[56px] lg:w-[56px] lg:h-[66px]"
           />
+          </a>
           <h1 className="text-header-1 font-inter font-semibold text-sm sm:text-base lg:text-[18px] leading-5 sm:leading-6 lg:leading-[22px]">
             PYSELLERS
           </h1>
