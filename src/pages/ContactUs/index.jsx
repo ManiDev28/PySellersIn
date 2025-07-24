@@ -20,10 +20,43 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    {try {
+      const response = await fetch("http://localhost:3001/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      alert(result.message);
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      alert("Failed to send message");
+      console.error(error);
+    }}
+
+
+    //e.preventDefault();
+    //console.log('Form submitted:', formData);
     // Handle form submission logic here
+    //below commented is DB PoC
+    {/*
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      alert(result.message);
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      alert("Failed to send message");
+      console.error(error);
+    }
+      */}
+
   };
 
   return (
