@@ -10,38 +10,41 @@ const ContactPage = () => {
     firstName: '',
     phone: '',
     email: '',
-    message: ''
+    message: '',
   });
 
   const handleInputChange = (field) => (e) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [field]: e.target.value
+      [field]: e.target.value,
     }));
   };
 
+  //to send to nodemailer
   const handleSubmit = async (e) => {
     e.preventDefault();
-    {try {
-      const response = await fetch("http://localhost:3001/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const result = await response.json();
-      alert(result.message);
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
-      alert("Failed to send message");
-      console.error(error);
-    }}
-
+    {
+      try {
+        const response = await fetch('http://localhost:3001/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+        const result = await response.json();
+        alert(result.message);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } catch (error) {
+        alert('Failed to send message');
+        console.error(error);
+      }
+    }
 
     //e.preventDefault();
     //console.log('Form submitted:', formData);
     // Handle form submission logic here
     //below commented is DB PoC
-    {/*
+    {
+      /*
     try {
       const response = await fetch("http://localhost:5000/api/contact", {
         method: "POST",
@@ -55,20 +58,20 @@ const ContactPage = () => {
       alert("Failed to send message");
       console.error(error);
     }
-      */}
-
+      */
+    }
   };
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#e6f0fa_0%,_#ffffff_100%)]">
       <Header />
-      
+
       <main className="flex flex-col justify-start items-center w-full px-4 sm:px-6 lg:px-[26px]">
         {/* Hero Contact Section */}
         <div className="w-full mt-5 mb-20">
-          <img 
-            src="/images/ContactPage/banner-img.jpg" 
-            alt="Contact Us" 
+          <img
+            src="/images/ContactPage/banner-img.jpg"
+            alt="Contact Us"
             className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[562px] object-cover rounded-lg"
           />
         </div>
@@ -78,9 +81,9 @@ const ContactPage = () => {
           {/* Our Address */}
           <div className="flex flex-col justify-start items-center w-full lg:w-[202px]">
             <div className="flex justify-center items-center w-20 h-20 bg-global-1 rounded-full mb-4">
-              <img 
-                src="/images/ContactPage/grid_icon1.svg" 
-                alt="Location" 
+              <img
+                src="/images/ContactPage/grid_icon1.svg"
+                alt="Location"
                 className="w-8 h-[46px]"
               />
             </div>
@@ -95,11 +98,7 @@ const ContactPage = () => {
           {/* Phone Number */}
           <div className="flex flex-col justify-start items-center w-full lg:w-[268px] gap-2">
             <div className="flex justify-center items-center w-20 h-20 bg-global-1 rounded-full">
-              <img 
-                src="/images/ContactPage/grid_icon2.svg" 
-                alt="Phone" 
-                className="w-8 h-8"
-              />
+              <img src="/images/ContactPage/grid_icon2.svg" alt="Phone" className="w-8 h-8" />
             </div>
             <div className="flex flex-col gap-1 justify-start items-center w-full">
               <h3 className="text-xl sm:text-2xl lg:text-[25px] font-medium leading-8 text-global-1 font-ibm-plex-sans">
@@ -114,11 +113,7 @@ const ContactPage = () => {
           {/* Email Address */}
           <div className="flex flex-col justify-start items-center w-full lg:w-auto">
             <div className="flex justify-center items-center w-20 h-20 bg-global-1 rounded-full mb-4">
-              <img 
-                src="/images/ContactPage/grid_icon3.svg" 
-                alt="Email" 
-                className="w-8 h-[26px]"
-              />
+              <img src="/images/ContactPage/grid_icon3.svg" alt="Email" className="w-8 h-[26px]" />
             </div>
             <h3 className="text-xl sm:text-2xl lg:text-[25px] font-medium leading-8 text-global-1 mb-1 font-ibm-plex-sans">
               Email Address
@@ -221,7 +216,7 @@ const ContactPage = () => {
           <p className="text-base sm:text-lg font-normal leading-6 text-global-1 text-center mb-8 font-ibm-plex-sans">
             Located in the heart of Chennai Innovation District
           </p>
-          
+
           {/* Map */}
           <div className="w-full h-[300px] sm:h-[400px] lg:h-[504px] rounded-lg overflow-hidden">
             <iframe
