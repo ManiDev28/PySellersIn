@@ -1,19 +1,70 @@
 import React from 'react';
+//use .env file
+//require('dotenv').config();
 
 const Footer = () => {
-  const serviceLinks = [
-    'App Development',
-    'IT Consultancy', 
-    'Custom Software',
-    'Automation'
+  //social-media links
+  const socialIcons = [
+    {
+      name: 'Instagram',
+      icon: (
+        <img
+          src="/images/common/Footer/instagram-mini-icon.svg"
+          x="0"
+          y="0"
+          width="32"
+          height="32"
+          alt="Instagram"
+        />
+      ), link: "https://www.instagram.com/pysellersservices",
+    },
+    {
+      name: 'LinkedIn',
+      icon: (
+        <img
+          src="/images/common/Footer/linkedin-mini-icon.svg"
+          x="0"
+          y="0"
+          width="32"
+          height="32"
+          alt="LinkedIn"
+        />
+      )
+      , link: "https://www.linkedin.com/in/pysellers-it-services-5b0a74344/",
+    },
+    {
+      name: 'Facebook',
+      icon: (
+        <img
+          src="/images/common/Footer/facebook-mini-icon.svg"
+          x="0"
+          y="0"
+          width="32"
+          height="32"
+          alt="Facebook"
+        />
+      ),
+       link: "https://www.facebook.com/people/Pysellers-services-PVT-LTD/61576132637174/#",
+    },
+    {
+      name: 'YouTube',
+      icon: (
+        <img
+          src="\images\common\Footer\youtube-mini-icon.svg"
+          x="0"
+          y="0"
+          width="32"
+          height="32"
+          alt="YouTube"
+        />
+      )
+      , link: "https://www.youtube.com/@PysellersServices",
+    },
   ];
 
-  const companyLinks = [
-    'About Us',
-    'Contact',
-    'Privacy Policy',
-    'Terms of Service'
-  ];
+  const serviceLinks = ['App Development', 'IT Consultancy', 'Custom Software', 'Automation'];
+
+  const companyLinks = ['About Us', 'Contact', 'Privacy Policy', 'Terms of Service'];
 
   return (
     <footer className="bg-global-6 px-4 sm:px-6 lg:px-[26px] py-6 sm:py-8 lg:py-[26px] mt-8 sm:mt-12 lg:mt-[38px] w-full">
@@ -27,8 +78,24 @@ const Footer = () => {
                 PYSELLERS
               </h2>
               <p className="text-global-2 font-ibm-plex font-normal text-sm sm:text-base lg:text-[16px] leading-5 sm:leading-6 lg:leading-[20px] w-full">
-                Delivering innovative IT solutions that drive business growth and digital transformation.
+                Delivering innovative IT solutions that drive business growth and digital
+                transformation.
               </p>
+              {/* Social Media Icons */}
+              <div className="flex gap-4 items-center w-max">
+                {socialIcons.map((icon) => (
+                  <a
+                    key={icon.name}
+                    href={icon.link}
+                    aria-label={icon.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200 transition"
+                  >
+                    <span className="text-gray-500 hover:text-gray-700">{icon.icon}</span>
+                  </a>
+                ))}
+              </div>
             </div>
 
             {/* Links Section */}

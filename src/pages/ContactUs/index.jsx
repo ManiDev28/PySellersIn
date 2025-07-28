@@ -67,7 +67,7 @@ const ContactPage = () => {
         {/* Hero Contact Section */}
         <div className="w-full mt-5 mb-20">
           <img 
-            src="/images/ContactPage/banner-img.png" 
+            src="/images/ContactPage/banner-img.jpg" 
             alt="Contact Us" 
             className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[562px] object-cover rounded-lg"
           />
