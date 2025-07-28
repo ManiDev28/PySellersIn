@@ -66,6 +66,7 @@ const AboutUs = () => {
         className="relative w-full bg-cover bg-center bg-no-repeat mt-5"
         style={{ backgroundImage: "url('/images/AboutUs/generated-image.png')" }}
       >
+        
         <div className="w-full max-w-[1388px] mx-auto px-4 sm:px-6 lg:px-14 py-24 sm:py-32 lg:py-[148px]">
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-8 mt-16 sm:mt-20 lg:mt-[106px] ml-0 sm:ml-4 lg:ml-[36px]">
             <p className="text-base sm:text-lg lg:text-[20px] font-medium font-ibm-plex text-global-2 leading-6 lg:leading-[26px]">
