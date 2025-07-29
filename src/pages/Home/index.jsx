@@ -54,7 +54,7 @@ const Home = () => {
         {/* Hero Section */}
         <section className="w-full">
 <div
-  className=" bg-[url('/images/HomePage/groupbg.png')] bg-cover bg-center rounded-lg p-4 sm:p-6 lg:p-[28px] w-full h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center">
+  className=" bg-[url('/images/HomePage/banner-img.png')] bg-cover bg-center rounded-lg p-4 sm:p-6 lg:p-[28px] w-full h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center">
             <div className="flex flex-col lg:flex-row items-center justify-between w-full">
               <div className="flex flex-col items-start w-full lg:w-[44%] mb-6 lg:mb-0 lg:mt-[118px]">
                 <h1 className="text-white font-ibm-plex font-medium text-xl sm:text-2xl lg:text-[30px] leading-7 sm:leading-8 lg:leading-[39px] w-full sm:w-3/4 lg:w-1/2 mb-3 sm:mb-4 lg:mb-[10px]">
