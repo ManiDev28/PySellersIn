@@ -96,8 +96,8 @@ const Service = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="w-full mt-16 sm:mt-[118px] px-4 sm:px-[118px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 w-full">
+      <section className="w-full mt-16 sm:mt-[118px] px-4 sm:px-[118px] ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 w-full justify-center items-center margin-between">
           {services.map((service) => (
             <div 
               key={service.id}
@@ -125,7 +125,7 @@ const Service = () => {
 
                 {/* Features */}
                 <div className="flex justify-start items-start w-full mb-4 sm:mb-4 ml-0 sm:ml-2">
-                  <div className="flex flex-col gap-6 sm:gap-[30px] justify-start items-center w-auto mt-3">
+                  <div className="flex flex-col gap-6 sm:gap-[30px] ">
                     {service.features.map((_, index) => (
                       <img 
                         key={index}
@@ -155,62 +155,70 @@ const Service = () => {
       </section>
 
       {/* Process Section */}
-      <section className="w-full mt-20 sm:mt-[144px] px-4 sm:px-14">
-        <div className="flex justify-start items-center w-full">
-          <div className="flex flex-col gap-8 sm:gap-[36px] justify-start items-center w-full mx-1">
-            {/* Section Header */}
-            <div className="flex flex-col gap-3 justify-start items-center w-auto">
-              <h2 className="text-2xl sm:text-[35px] font-semibold font-ibm-plex text-global-1 leading-10 sm:leading-[46px] text-left">
-                Our Process
-              </h2>
-              <p className="text-base sm:text-lg font-medium font-ibm-plex text-global-1 leading-6 text-left">
-                A proven methodology that ensures successful project delivery
-              </p>
-            </div>
+<section className="w-full mt-20 sm:mt-[144px] px-4 sm:px-14">
+  <div className="flex justify-center w-full">
+    <div className="flex flex-col gap-8 sm:gap-[36px] items-center w-full max-w-[1280px]">
+      
+      {/* Section Header */}
+      <div className="flex flex-col gap-3 items-center text-center w-full">
+        <h2 className="text-2xl sm:text-[35px] font-semibold font-ibm-plex text-global-1 leading-10 sm:leading-[46px]">
+          Our Process
+        </h2>
+        <p className="text-base sm:text-lg font-medium font-ibm-plex text-global-1 leading-6">
+          A proven methodology that ensures successful project delivery
+        </p>
+      </div>
 
-            {/* Process Steps */}
-            <div className="flex flex-col sm:flex-row justify-start items-center w-full">
-              {/* First Description */}
-              <p className="text-sm sm:text-base font-normal font-ibm-plex text-global-1 leading-5 text-center w-full sm:w-[22%] self-end mb-4 sm:mb-0 order-2 sm:order-1">
-                Understanding your business needs and requirements
-              </p>
+      {/* Process Steps */}
+      <div className="flex flex-col sm:flex-row items-center justify-center w-full gap-6">
+        
+        {/* First Description */}
+        <p className="text-sm sm:text-base font-normal font-ibm-plex text-global-1 leading-5 text-center sm:text-left w-full sm:w-[22%]">
+        
+        </p>
 
-              {/* Steps Container */}
-              <div className="flex flex-col gap-3 justify-start items-start w-full sm:w-auto ml-0 sm:ml-[-206px] order-1 sm:order-2">
-                {/* Step Numbers */}
-                <div className="flex flex-col sm:flex-row gap-4 sm:gap-[260px] w-full">
-                  {processSteps.map((step) => (
-                    <div key={step.number} className="flex flex-col gap-3 justify-start items-center w-full sm:w-auto">
-                      <div className="bg-global-1 rounded-[40px] w-16 sm:w-20 h-16 sm:h-20 flex items-center justify-center">
-                        <span className="text-2xl sm:text-[30px] font-medium font-ibm-plex text-global-1 leading-10">
-                          {step.number}
-                        </span>
-                      </div>
-                      <h3 className="text-lg sm:text-xl font-medium font-ibm-plex text-global-1 leading-7 text-left">
-                        {step.title}
-                      </h3>
-                    </div>
-                  ))}
-                </div>
+        {/* Steps Container */}
+       <div className="flex flex-col sm:flex-row gap-3 sm:gap-[260px] justify-start items-center w-full sm:w-auto mt-3 sm:ml-6">
 
-                {/* Step Descriptions */}
-                <div className="flex flex-col sm:flex-row justify-end items-center w-full gap-4 sm:gap-0">
-                  <p className="text-sm sm:text-base font-normal font-ibm-plex text-global-1 leading-5 text-center w-full sm:w-[30%]">
-                    Creating detailed project roadmaps and timelines
-                  </p>
-                  <p className="text-sm sm:text-base font-normal font-ibm-plex text-global-1 leading-5 text-center w-full sm:w-[26%] sm:ml-[30px]">
-                    Building solutions with cutting-edge technologies
-                  </p>
-                  <p className="text-sm sm:text-base font-normal font-ibm-plex text-global-1 leading-5 text-center w-full sm:w-[22%] sm:ml-[30px]">
-                    Deploying and supporting your solutions
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          {processSteps.map((step) => (
+  <div key={step.number} className="flex flex-col gap-3 items-center w-full sm:w-auto text-center">
+    <div className="bg-global-1 rounded-[40px] w-16 sm:w-20 h-16 sm:h-20 flex items-center justify-center">
+      <span className="text-2xl sm:text-[30px] font-medium font-ibm-plex text-global-1 leading-10">
+        {step.number}
+      </span>
+    </div>
+    <h3 className="text-lg sm:text-xl font-medium font-ibm-plex text-global-1 leading-7">
+      {step.title}
+    </h3>
+
+    {step.title === "Discovery" && (
+      <p className="text-sm sm:text-base font-normal font-ibm-plex text-global-1 leading-5 max-w-[240px] mt-2 line-clamp-2">
+        Understanding your business needs and requirements
+      </p>
+    )}
+    {step.title === "Planning" && (
+      <p className="text-sm sm:text-base font-normal font-ibm-plex text-global-1 leading-5 max-w-[240px] mt-2 line-clamp-2">
+        Creating detailed project roadmaps and timelines
+      </p>
+    )}
+    {step.title === "Development" && (
+      <p className="text-sm sm:text-base font-normal font-ibm-plex text-global-1 leading-5 max-w-[240px] mt-2 line-clamp-2">
+        Building solutions with cutting-edge technologies
+      </p>
+    )}
+    {step.title === "Delivery" && (
+      <p className="text-sm sm:text-base font-normal font-ibm-plex text-global-1 leading-5 max-w-[240px] mt-2 line-clamp-2">
+        Deploying and supporting your solutions
+      </p>
+    )}
+  </div>
+))}
+
         </div>
-      </section>
-
+      </div>
+    </div>
+  </div>
+</section>
       <Footer />
     </div>
   );

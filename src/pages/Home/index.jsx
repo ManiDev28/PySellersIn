@@ -53,13 +53,14 @@ const Home = () => {
       <main className="flex flex-col gap-8 sm:gap-12 lg:gap-[48px] items-center w-full mt-4 sm:mt-6 lg:mt-[20px] mx-4 sm:mx-6 lg:mx-[26px]">
         {/* Hero Section */}
         <section className="w-full">
-          <div className="bg-global-1 rounded-lg p-4 sm:p-6 lg:p-[28px] w-full">
+<div
+  className=" bg-[url('/images/HomePage/groupbg.png')] bg-cover bg-center rounded-lg p-4 sm:p-6 lg:p-[28px] w-full h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center">
             <div className="flex flex-col lg:flex-row items-center justify-between w-full">
               <div className="flex flex-col items-start w-full lg:w-[44%] mb-6 lg:mb-0 lg:mt-[118px]">
-                <h1 className="text-global-1 font-ibm-plex font-medium text-xl sm:text-2xl lg:text-[30px] leading-7 sm:leading-8 lg:leading-[39px] w-full sm:w-3/4 lg:w-1/2 mb-3 sm:mb-4 lg:mb-[10px]">
+                <h1 className="text-white font-ibm-plex font-medium text-xl sm:text-2xl lg:text-[30px] leading-7 sm:leading-8 lg:leading-[39px] w-full sm:w-3/4 lg:w-1/2 mb-3 sm:mb-4 lg:mb-[10px]">
                   Custom Software Solutions & Services
                 </h1>
-                <p className="text-global-1 font-ibm-plex font-medium text-sm sm:text-base lg:text-[18px] leading-5 sm:leading-6 lg:leading-[23px] w-full lg:w-[94%] mb-6 sm:mb-8 lg:mb-[46px]">
+                <p className="text-white font-ibm-plex font-medium text-sm sm:text-base lg:text-[18px] leading-5 sm:leading-6 lg:leading-[23px] w-full lg:w-[94%] mb-6 sm:mb-8 lg:mb-[46px]">
                   Transform your business with cutting-edge technology solutions designed to drive growth and efficiency.
                 </p>
                 <Button 
@@ -70,13 +71,7 @@ const Home = () => {
                   Learn More
                 </Button>
               </div>
-              <div className="w-full lg:w-[48%] flex justify-center">
-                <img 
-                  src="/images/HomePage/bannerImg.png" 
-                  alt="Team collaboration" 
-                  className="w-full max-w-md lg:max-w-none lg:w-[642px] lg:h-[504px] rounded-lg sm:rounded-xl lg:rounded-[14px] object-cover"
-                />
-              </div>
+
             </div>
           </div>
         </section>
@@ -88,12 +83,12 @@ const Home = () => {
               About Us
             </h2>
             <p className="text-global-1 font-inter font-medium text-xs sm:text-sm lg:text-[14px] leading-4 sm:leading-5 lg:leading-[16px] text-center">
-              Welcome to PYSELLERS SERVICES PRIVATE LIMITED, an IT Software Company...
+              Welcome to PYSELLERS SERVICES PRIVATE LIMITED, an IT Software Company
+              
+              PYSELLERS has been in the software business in India since 2024
               <br />
-              PYSELLERS has been in the software business in India since 2024...
-              <br />
-              We have extensive industry experience...
-              <br />
+              We have extensive industry experience
+              
               What makes PYSELLERS unique is our ability to help clients tackle their challenges.
             </p>
           </div>
