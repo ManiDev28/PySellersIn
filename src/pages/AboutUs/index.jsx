@@ -3,6 +3,11 @@ import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
 
 const AboutUs = () => {
+  /**
+   * @stats: numerical information about our achievement
+   * @teamMembers: our team-person details
+   * @coreValues: list of our core values
+   */
   const stats = [
     { number: '50+', label: 'Projects Completed' },
     { number: '25+', label: 'Happy Clients' },
@@ -106,6 +111,7 @@ const AboutUs = () => {
       {/* Statistics Section */}
       <section className="w-full max-w-[1388px] mx-auto px-4 sm:px-6 lg:px-14 py-12 sm:py-16 lg:py-0 mt-8 sm:mt-12 lg:mt-[104px]">
         <div className="flex flex-col gap-16 sm:gap-20 lg:gap-[130px]">
+          {/*below we are mapping details to the user-view */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-12 lg:gap-[170px] w-full lg:w-[88%] mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="flex flex-col justify-start items-center text-center">
@@ -165,7 +171,7 @@ const AboutUs = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-[30px] font-medium font-inter text-global-1 leading-8 lg:leading-[37px] text-center">
               Meet Our Team
             </h2>
-            
+            {/*below we are mapping details to the user-view */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 w-full max-w-[1270px] ml-0 lg:ml-[10px] mb-0 lg:mb-4">
               {teamMembers.map((member, index) => (
                 <div 
@@ -200,7 +206,7 @@ const AboutUs = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-[35px] font-medium font-ibm-plex text-global-1 leading-10 lg:leading-[46px] text-center">
             Our Core Values
           </h2>
-          
+          {/*below we are mapping details to the user-view */}
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-[46px] justify-center items-center w-full lg:w-[96%]">
             {coreValues.map((value, index) => (
               <div key={index} className="flex flex-col gap-2 lg:gap-[10px] justify-start items-center w-full">

@@ -5,9 +5,14 @@ import Button from '../../components/common/ui/Button';
 import EditText from '../../components/common/ui/EditText';
 import TextArea from '../../components/common/ui/TextArea';
 
+/**
+ *
+ * @handleInputChange: when user changes their input, then it'll get updated
+ * @handleSubmit: extracted formData from user sent to NodeMailer Service API for Request-Email sending process....
+ */
 const ContactPage = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
+    Name: '',
     phone: '',
     email: '',
     message: '',
@@ -20,8 +25,10 @@ const ContactPage = () => {
     }));
   };
 
-  //to send to nodemailer
   const handleSubmit = async (e) => {
+    /**
+     * preventDefaut() ---- avoids browser default redirect function to submit our form
+     */
     e.preventDefault();
     {
       try {
@@ -31,34 +38,15 @@ const ContactPage = () => {
           body: JSON.stringify(formData),
         });
         const result = await response.json();
+        /**
+         * below displays the console log of Email Sent STATUS
+         */
         alert(result.message);
         setFormData({ name: '', email: '', phone: '', message: '' });
       } catch (error) {
         alert('Failed to send message');
         console.error(error);
       }
-    }
-
-    //e.preventDefault();
-    //console.log('Form submitted:', formData);
-    // Handle form submission logic here
-    //below commented is DB PoC
-    {
-      /*
-    try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const result = await response.json();
-      alert(result.message);
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
-      alert("Failed to send message");
-      console.error(error);
-    }
-      */
     }
   };
 
@@ -147,12 +135,12 @@ const ContactPage = () => {
                     First Name *
                   </label>
                   <EditText
-                    value={formData.firstName}
-                    onChange={handleInputChange('firstName')}
-                    placeholder="Ex, John"
-                    className="w-full border border-global-1 rounded-[20px] bg-white text-global-2 px-4 sm:px-[18px] py-1.5 sm:py-[6px] text-lg sm:text-[20px] font-normal leading-7 ml-3 mt-1 font-open-sans"
+                    value={formData.Name}
+                    onChange={handleInputChange('Name')}
+                    placeholder="Enter your Name"
+                    className="w-full border border-global-1 rounded-[20px] bg-white text-global-1 px-4 sm:px-[18px] py-1.5 sm:py-[6px] text-lg sm:text-[20px] font-normal leading-7 ml-3 mt-1 font-open-sans"
                     fullWidth
-                  />
+                />
 
                   {/* Phone */}
                   <label className="text-xl sm:text-2xl lg:text-[25px] font-normal leading-8 text-global-1 mb-1 mt-6 sm:mt-10 font-ibm-plex-sans">
@@ -162,7 +150,8 @@ const ContactPage = () => {
                     value={formData.phone}
                     onChange={handleInputChange('phone')}
                     placeholder="Enter Your Phone Number"
-                    className="w-full border border-global-1 rounded-[20px] bg-white text-global-2 px-4 sm:px-[18px] py-1.5 sm:py-[6px] text-lg sm:text-[20px] font-normal leading-7 ml-3 mt-2.5 font-open-sans"
+                    type="phone"
+                    className="w-full border border-global-1 rounded-[20px] bg-white text-global-1 px-4 sm:px-[18px] py-1.5 sm:py-[6px] text-lg sm:text-[20px] font-normal leading-7 ml-3 mt-2.5 font-open-sans"
                     fullWidth
                   />
 
@@ -173,9 +162,9 @@ const ContactPage = () => {
                   <EditText
                     value={formData.email}
                     onChange={handleInputChange('email')}
-                    placeholder="Enter Your Phone Number"
+                    placeholder="Enter Your Email Address"
                     type="email"
-                    className="w-full border border-global-1 rounded-[20px] bg-white text-global-2 px-4 sm:px-[18px] py-1.5 sm:py-[6px] text-lg sm:text-[20px] font-normal leading-7 ml-3 mt-2.5 font-open-sans"
+                    className="w-full border border-global-1 rounded-[20px] bg-white text-global-1 px-4 sm:px-[18px] py-1.5 sm:py-[6px] text-lg sm:text-[20px] font-normal leading-7 ml-3 mt-2.5 font-open-sans"
                     fullWidth
                   />
                 </div>
@@ -188,9 +177,9 @@ const ContactPage = () => {
                   <TextArea
                     value={formData.message}
                     onChange={handleInputChange('message')}
-                    placeholder="Ex, John"
+                    placeholder="Enter your message"
                     rows={8}
-                    className="w-full lg:w-[84%] lg:self-end border border-global-1 rounded-[20px] bg-white text-global-2 p-3 text-lg sm:text-[20px] font-normal leading-7 font-open-sans"
+                    className="w-full lg:w-[84%] lg:self-end border border-global-1 rounded-[20px] bg-white text-global-1 p-3 text-lg sm:text-[20px] font-normal leading-7 font-open-sans"
                   />
                 </div>
               </div>
@@ -217,7 +206,7 @@ const ContactPage = () => {
             Located in the heart of Chennai Innovation District
           </p>
 
-          {/* Map */}
+          {/* Map Section-here we integrated this from external source */}
           <div className="w-full h-[300px] sm:h-[400px] lg:h-[504px] rounded-lg overflow-hidden">
             <iframe
               title="Office Location Map"
@@ -246,6 +235,7 @@ const ContactPage = () => {
                 Business Hours
               </h3>
               <div className="text-base sm:text-lg font-normal leading-8 text-global-1 font-ibm-plex-sans ">
+                {/*List of working-hours*/}
                 <div className="flex justify-between grid grid-cols-2 gap-x-[3cm]">
                   <span>Monday - Friday</span>
                   <span>9:00 AM - 6:00PM</span>
@@ -267,6 +257,7 @@ const ContactPage = () => {
                 Support Hours
               </h3>
               <div className="text-base sm:text-lg font-normal leading-8 text-global-1 font-ibm-plex-sans ">
+                {/*List of Support Hours */}
                 <div className="flex justify-between  grid grid-cols-2 gap-x-[5.5cm]">
                   <span>Emergency</span>
                   <span>Support24/7</span>

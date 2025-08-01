@@ -9,6 +9,9 @@ import ContactPage from './pages/ContactUs';
 
 const AppRoutes = () => {
   return (
+    /**
+     * Routes here used to navigate between pages 
+     */
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />

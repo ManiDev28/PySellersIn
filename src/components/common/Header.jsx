@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  /**
+   * below are the Navigation pane items
+   */
   const menuItems = [
     { label: 'Home', href: '/' },
     { label: 'About us', href: '/about-us' },
@@ -48,7 +50,6 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-4 lg:gap-[26px]">
           {menuItems.map((item, index) => (
-            // link tag for navigation
             <Link
               key={index}
               role="menuitem"
@@ -71,7 +72,10 @@ const Header = () => {
                 role="menuitem"
                 to={item.href}
                 className="bg-global-5 text-global-1 font-ibm-plex font-medium text-[15px] leading-[20px] rounded-[10px] px-4 py-2 text-left hover:bg-gray-100 transition-colors duration-200"
-                onClick={() => setMenuOpen(false)}
+                /**
+                 * opens three dot navigation on mobile devices
+                 */
+                onClick={() => setMenuOpen(true)}
               >
                 {item.label}
               </Link>

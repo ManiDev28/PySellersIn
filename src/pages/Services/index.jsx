@@ -4,6 +4,9 @@ import Footer from '../../components/common/Footer';
 import Button from '../../components/common/ui/Button';
 
 const Service = () => {
+  /**
+   * Below is list of services provided and it can be used to update it in future
+   */
   const services = [
     {
       id: 1,
@@ -50,7 +53,9 @@ const Service = () => {
       ]
     }
   ];
-
+/**
+ * Below is our organisation workflow steps
+ */
   const processSteps = [
     {
       number: '1',
@@ -104,7 +109,7 @@ const Service = () => {
               className="bg-global-1 border border-[#bcbcbc] rounded-[10px] p-4 sm:p-5"
             >
               <div className="flex flex-col justify-start items-start w-full">
-                {/* Icon */}
+                {/* Services Icons section: properities fetched from Services declaration */}
                 <div className="bg-global-2 border border-[#bcbcbc] rounded-[5px] p-3 mb-8 sm:mb-[58px]">
                   <img 
                     src={service.icon} 
@@ -113,17 +118,17 @@ const Service = () => {
                   />
                 </div>
 
-                {/* Title */}
+                {/* Services Icon Title */}
                 <h3 className="text-xl sm:text-[25px] font-medium font-ibm-plex text-global-1 leading-8 sm:leading-[33px] text-center mb-2 sm:mb-2">
                   {service.title}
                 </h3>
 
-                {/* Description */}
+                {/* Services Icon Description */}
                 <p className="text-base sm:text-lg font-normal font-ibm-plex text-global-1 leading-6 sm:leading-[23px] text-left w-full mb-6 sm:mb-9 ml-0 sm:ml-2">
                   {service.description}
                 </p>
 
-                {/* Features */}
+                {/* Services Icon Features */}
                 <div className="flex justify-start items-start w-full mb-4 sm:mb-4 ml-0 sm:ml-2">
                   <div className="flex flex-col gap-6 sm:gap-[30px] ">
                     {service.features.map((_, index) => (
@@ -190,7 +195,7 @@ const Service = () => {
     <h3 className="text-lg sm:text-xl font-medium font-ibm-plex text-global-1 leading-7">
       {step.title}
     </h3>
-
+     {/*Steps section description*/}
     {step.title === "Discovery" && (
       <p className="text-sm sm:text-base font-normal font-ibm-plex text-global-1 leading-5 max-w-[240px] mt-2 line-clamp-2">
         Understanding your business needs and requirements
